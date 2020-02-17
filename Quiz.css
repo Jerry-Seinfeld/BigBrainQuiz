@@ -5,7 +5,7 @@ body {
 
 .grid {
 width: 600px;
-height: 500px;
+height: 580px;
 margin: 0 auto;
 background-color: azure;
 padding: 10px 50px 50px 50px;
@@ -60,4 +60,8 @@ margin-top: 30px;
 #btn0:focus, #btn1:focus, #btn2:focus, #btn3:focus {
     outline: 0;
 
+}
+
+.timer {
+    text-align: center;
 }
