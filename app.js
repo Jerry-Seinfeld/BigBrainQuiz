@@ -61,6 +61,24 @@ function showScores() {
     element.innerHTML = gameOverHTML;
 };
 
+function highScore(score) {
+    var saved = 0;
+    try { saved = parseFloat(localStorage.highScore); } catch (e) { saved = 0; }
+    if (!(typeof score === 'undefined')) {
+        try { score = parseFloat(score); } catch (e) { score = 0; }
+        if (score > saved) {
+            saved = score;
+            localStorage.highScore = '' + score;
+        }
+    }
+    if (isNaN(saved)) {
+        saved = 0;
+        localStorage.highScore = '0';
+    }
+    return saved;
+}
+
+
 // These are the questions
 var questions = [
     new Question("Speedometer is an example of ______ computers.", ["Hybrid", "Digital", "Analog", "None of the Above"], "Analog"),
